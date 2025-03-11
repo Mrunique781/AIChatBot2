@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Document Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="text-center mb-0">
+                            <i class="fas fa-robot me-2"></i>AI Document Generator
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="prompt" class="form-label">Enter your prompt:</label>
+                            <textarea class="form-control" id="prompt" rows="4" placeholder="Type your prompt here..."></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Select output format:</label>
+                            <div class="d-flex justify-content-center gap-2">
+                                <button class="btn btn-outline-primary format-btn" data-format="pdf">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </button>
+                                <button class="btn btn-outline-primary format-btn" data-format="docx">
+                                    <i class="fas fa-file-word"></i> DOCX
+                                </button>
+                                <button class="btn btn-outline-primary format-btn" data-format="txt">
+                                    <i class="fas fa-file-alt"></i> TXT
+                                </button>
+                                <button class="btn btn-outline-primary format-btn" data-format="xlsx">
+                                    <i class="fas fa-file-excel"></i> XLSX
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button id="generateBtn" class="btn btn-success" disabled>
+                                <i class="fas fa-magic me-2"></i>Generate Document
+                            </button>
+                        </div>
+
+                        <div id="loading" class="text-center mt-3 d-none">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Generating your document...</p>
+                        </div>
+
+                        <div id="error" class="alert alert-danger mt-3 d-none" role="alert">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+ai_document_generator/
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+├── templates/
+│   └── index.html
+├── requirements.txt
+└── app.py
